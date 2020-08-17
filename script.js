@@ -5,10 +5,7 @@ function search() {
     fetch (`https://api.lyrics.ovh/suggest/${searching}`)
     .then (res => res.json())
     .then (data => {
-        console.log(data);
-        const picture= data.data[0].album.cover_big;
-        document.getElementById("img9").innerHTML="<img src='"+ picture +"'>";
-        //document.getElementById("img9").innerHTML="<img src='http://cdn-images.deezer.com/images/cover/d67ce03f28561c99caac76420adedb5c/500x500-000000-80-0-0.jpg'>";
+        
         //get data from api
        for(let i = 0;i < 10; i++){
         document.getElementById (`titleshow${i}`) . innerText = data.data[i].title;
